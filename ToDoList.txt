@@ -1,0 +1,25 @@
+--------Prototipo Escenario--------
+Piso.COMPLETADO
+Acomodar Obstaculos.
+--------Creacion Bala Raycast--------
+Raycast.COMPLETADO
+Visual.COMPLETADO
+--------Creacion Movimiento Personaje--------
+WASD.COMPLETADO
+Disparar.COMPLETADO
+--------Creacion Enemigo--------
+Recibir daño.COMPLETADO
+
+--------Creacion Player 2--------
+Hacer que se muevan individualmente.COMPLETADO
+Que reciban daño entre ellos.COMPLETADO
+Cambiar Colores de los Players.COMPLETADO
+
+--------Camaras dos Jugadores--------
+Cinemachine
+Separacion Camaras
+
+
+--------Revisar Movimiento Boxhead--------
+Revisar.
+Decidir.
