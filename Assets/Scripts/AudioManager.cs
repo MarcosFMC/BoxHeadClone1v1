@@ -8,6 +8,8 @@ public enum AudioNames
     pistolShoot = 0,
     shotgunShoot = 1,
     takeDamage = 2,
+    death=3,
+
 }
 public class AudioManager : MonoBehaviour
 {

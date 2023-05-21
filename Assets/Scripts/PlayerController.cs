@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
     private Rigidbody myRb;
 
     [SerializeField]
@@ -35,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        myRb = GetComponent<Rigidbody>();
         playerSkills = gameObject.GetComponent<PlayerSkills>();
         playerInventory = gameObject.GetComponentInChildren<WeaponInventory>();
     }

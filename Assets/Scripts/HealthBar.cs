@@ -11,7 +11,7 @@ public class HealthBar : MonoBehaviour
     private RectTransform rectTransform;
 
     [SerializeField]
-    private Camera currentCamera;
+    public Camera currentCamera;
 
     [SerializeField]
     private Image fillHealthBar;
@@ -23,6 +23,7 @@ public class HealthBar : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>();
     }
+
     private void FixedUpdate()
     {
         rectTransform.position = currentCamera.WorldToScreenPoint(playerTransform.position + healthBarOffset);

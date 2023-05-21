@@ -12,20 +12,19 @@ public class PlayerHealth : MonoBehaviour
     public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
     public float TotalHealth { get => totalHealth; }
 
-    [SerializeField]
     private HealthBar healthBar;
 
-    [SerializeField]
-    private MeshRenderer meshRenderer;
+    private Animator myAnim;
 
     private void Awake()
     {
+        healthBar = GetComponentInChildren<HealthBar>();
+        myAnim = GetComponent<Animator>();
         currentHealth = totalHealth;
-        meshRenderer = GetComponentInChildren<MeshRenderer>();
     }
     public void TakeDamage(float dmg)
     {
-        if (currentHealth > 0)
+        if (currentHealth >= 0)
         {
             currentHealth -= dmg;
             AudioManager.Instance.PlaySound(AudioNames.takeDamage);
@@ -38,6 +37,20 @@ public class PlayerHealth : MonoBehaviour
     }
     public void Death()
     {
-        Destroy(gameObject);
+        
+        if (myAnim.GetBool("isDead") == false)
+        {
+            AudioManager.Instance.PlaySound(AudioNames.death);
+            myAnim.SetBool("isDead", true);
+            StartCoroutine(ResetPlayer());
+        }
+    }
+    private IEnumerator ResetPlayer()
+    {
+         yield return new WaitForSeconds(2f);
+         currentHealth = totalHealth;
+         myAnim.SetBool("isDead", false);
+         healthBar.UpdateHealthBar(totalHealth, currentHealth);
+         transform.position = SpawnManager.Instance.GetRandomSpawn();
     }
 }
