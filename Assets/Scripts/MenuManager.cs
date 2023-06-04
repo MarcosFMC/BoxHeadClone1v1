@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject menuCanvas;
+    private GameObject menuUI;
+
+    [SerializeField]
+    private GameObject menuCamera;
 
     private void Awake()
     {
@@ -24,9 +27,7 @@ public class MenuManager : MonoBehaviour
     }
     private void GameManager_OnGameStateChanged(GameState state)
     {
-        if(state == GameState.Menu)
-        {
-            menuCanvas.SetActive(true);
-        }
+        menuUI.SetActive(state == GameState.Menu);
+        menuCamera.SetActive(state == GameState.Menu);
     }
 }

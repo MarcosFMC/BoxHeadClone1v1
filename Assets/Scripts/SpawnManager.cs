@@ -19,7 +19,7 @@ public class SpawnManager : MonoBehaviour
     }
     public Vector3 GetRandomSpawn()
     {
-        int randomSpawn = Random.RandomRange(0, spawns.Length);
+        int randomSpawn = Random.Range(0, spawns.Length);
 
         return spawns[randomSpawn].position;
     }

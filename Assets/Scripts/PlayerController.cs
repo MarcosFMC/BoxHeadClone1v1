@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private KeyCode shootKey;
 
+    public bool isPaused;
+
 
     [SerializeField]
     private KeyCode up;
@@ -39,6 +41,14 @@ public class PlayerController : MonoBehaviour
         playerInventory = gameObject.GetComponentInChildren<WeaponInventory>();
     }
     void Update()
+    {
+       if(!isPaused) UpdatePlayerController();
+    }
+    private void FixedUpdate()
+    {
+        if(!isPaused) playerSkills.Movement(myRb, horizontalInputName, verticalInputName);
+    }
+    private void UpdatePlayerController()
     {
         if (Input.GetKeyDown(shootKey))
         {
@@ -86,9 +96,14 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, 145f, 0f);
         }
     }
-    private void FixedUpdate()
+
+    public void DesactivatePlayerInput()
     {
-        playerSkills.Movement(myRb,horizontalInputName,verticalInputName);
+        isPaused = true;
+    }
+    public void ActivatePlayerInput()
+    {
+        isPaused = false;
     }
 
 

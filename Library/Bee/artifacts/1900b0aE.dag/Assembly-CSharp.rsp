@@ -355,6 +355,7 @@
 "Assets/Scripts/CameraManager.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/HealthBar.cs"
+"Assets/Scripts/LifeUI.cs"
 "Assets/Scripts/MenuManager.cs"
 "Assets/Scripts/Pistol.cs"
 "Assets/Scripts/PlayerController.cs"
@@ -364,6 +365,7 @@
 "Assets/Scripts/RayBullet.cs"
 "Assets/Scripts/Shotgun.cs"
 "Assets/Scripts/SpawnManager.cs"
+"Assets/Scripts/VictoryManager.cs"
 "Assets/Scripts/Weapon.cs"
 "Assets/Scripts/WeaponInventory.cs"
 -langversion:9.0
